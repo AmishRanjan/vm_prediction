@@ -83,6 +83,7 @@ def create_model(x_train, y_train, x_test):
     # reshape input to be [samples, time steps, features]
     x_train = np.reshape(x_train, (x_train.shape[0], 1, x_train.shape[1]))
     x_test = np.reshape(x_test, (x_test.shape[0], 1, x_test.shape[1]))
+    print(x_train.shape)
     model = Sequential()
     model.add(LSTM(4, input_shape=(1, x_train.shape[2])))
     model.add(Dense(x_train.shape[2]))
